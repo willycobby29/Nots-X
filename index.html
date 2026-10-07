@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nots-X</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="theme-dark">
+    <div class="app-shell">
+      <div id="menuScreen" class="screen active">
+        <div class="panel">
+          <p class="eyebrow">Arcade mode</p>
+          <h1>Nots-X</h1>
+
+          <div class="settings-group">
+            <label>Game mode</label>
+            <div class="button-row" role="group" aria-label="Select game mode">
+              <button class="mode-option active" data-mode="bot" type="button">Vs Bot</button>
+              <button class="mode-option" data-mode="bot-first" type="button">Bot Starts</button>
+              <button class="mode-option" data-mode="pvp" type="button">2 Players</button>
+            </div>
+          </div>
+
+          <div class="settings-group">
+            <label>Difficulty</label>
+            <div class="button-row" role="group" aria-label="Select difficulty">
+              <button class="difficulty-option active" data-difficulty="easy" type="button">Easy</button>
+              <button class="difficulty-option" data-difficulty="medium" type="button">Medium</button>
+              <button class="difficulty-option" data-difficulty="hard" type="button">Hard</button>
+            </div>
+          </div>
+
+          <div class="settings-group">
+            <label>Match</label>
+            <div class="button-row" role="group" aria-label="Select match length">
+              <button class="bestof-option active" data-bestof="3" type="button">Best of 3</button>
+              <button class="bestof-option" data-bestof="5" type="button">Best of 5</button>
+            </div>
+          </div>
+
+          <div class="settings-group">
+            <label>Theme</label>
+            <div class="button-row" role="group" aria-label="Select theme">
+              <button class="theme-option active" data-theme="dark" type="button">Dark</button>
+              <button class="theme-option" data-theme="neon" type="button">Neon</button>
+              <button class="theme-option" data-theme="retro" type="button">Retro</button>
+            </div>
+          </div>
+
+          <button class="primary-button" data-mode="bot" type="button">Start game</button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="screen">
+        <div class="game-panel">
+          <header class="topbar">
+            <div>
+              <p class="eyebrow">Tic-Tac-Toe</p>
+              <h2 id="modeLabel">Mode: Bot</h2>
+            </div>
+            <div id="matchStatus" class="match-status">Best of 3</div>
+          </header>
+
+          <div class="scoreboard" aria-label="Scoreboard">
+            <div class="score-box x-box">
+              <span class="score-label">X</span>
+              <strong id="scoreX">0</strong>
+            </div>
+            <div class="score-box draw-box">
+              <span class="score-label">Draw</span>
+              <strong id="scoreDraw">0</strong>
+            </div>
+            <div class="score-box o-box">
+              <span class="score-label">O</span>
+              <strong id="scoreO">0</strong>
+            </div>
+          </div>
+
+          <div id="statusText" class="status-text">Player X's turn</div>
+
+          <div class="board" aria-label="Game board">
+            <button class="cell" data-index="0" type="button" aria-label="Cell 1"></button>
+            <button class="cell" data-index="1" type="button" aria-label="Cell 2"></button>
+            <button class="cell" data-index="2" type="button" aria-label="Cell 3"></button>
+            <button class="cell" data-index="3" type="button" aria-label="Cell 4"></button>
+            <button class="cell" data-index="4" type="button" aria-label="Cell 5"></button>
+            <button class="cell" data-index="5" type="button" aria-label="Cell 6"></button>
+            <button class="cell" data-index="6" type="button" aria-label="Cell 7"></button>
+            <button class="cell" data-index="7" type="button" aria-label="Cell 8"></button>
+            <button class="cell" data-index="8" type="button" aria-label="Cell 9"></button>
+          </div>
+
+          <div class="controls">
+            <button id="menuBtn" class="secondary-button" type="button">Menu</button>
+            <button id="restartBtn" class="secondary-button" type="button">Restart</button>
+            <button id="newRoundBtn" class="secondary-button" type="button">New Round</button>
+            <button id="resetScoresBtn" class="secondary-button" type="button">Reset Scores</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
